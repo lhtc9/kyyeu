@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Một Thời Để Nhớ • Kỷ yếu cấp 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- cánh phượng rơi -->
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<!-- điều hướng -->
+<header class="nav">
+  <div class="brand"><span class="mark">M</span> Một Thời <i>Để Nhớ</i></div>
+  <nav class="tabs" aria-label="Chuyển trang">
+    <button class="tab active" data-page="chung">Trang chung</button>
+    <button class="tab" data-page="l10">Lớp 10</button>
+    <button class="tab" data-page="l11">Lớp 11</button>
+    <button class="tab" data-page="l12">Lớp 12</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ TRANG CHUNG ============ -->
+  <div class="page show" id="chung">
+    <section class="hero">
+      <span class="kicker">Tuổi 15, 16, 17… và những ngày không trở lại</span>
+      <h1>Một Thời<br><span class="em">Để Nhớ</span></h1>
+      <p class="lead">Nơi cất giữ những thước phim, tấm ảnh và lời nhắn của cả lớp suốt ba năm cấp ba. Chạm vào từng khung hình để xem rõ hơn.</p>
+      <div class="year-line">Niên khóa 2022 – 2025</div>
+
+      <div class="filmstrip" id="filmstrip"></div>
+      <div class="scroll-cue"><span>↓ cuộn xuống để nhớ lại ↓</span></div>
+    </section>
+
+    <!-- timeline ba năm -->
+    <section>
+      <span class="eyebrow reveal">hành trình của chúng mình</span>
+      <h2 class="sec-title reveal">Ba năm, một bầu trời kỷ niệm</h2>
+      <p class="sec-sub reveal">Mỗi năm một sắc màu, một câu chuyện. Chạm vào từng năm để mở album riêng.</p>
+      <div class="timeline">
+        <div class="tl-card reveal" style="--ac:var(--c10)" data-go="l10">
+          <div class="yr">Lớp 10</div>
+          <div class="slogan">Bỡ ngỡ &amp; rực rỡ</div>
+          <p>Những ngày đầu chập chững làm quen với mái trường mới, thầy cô mới và những người bạn sẽ đi cùng ta suốt thanh xuân.</p>
+        </div>
+        <div class="tl-card reveal" style="--ac:var(--c11)" data-go="l11">
+          <div class="yr">Lớp 11</div>
+          <div class="slogan">Gắn bó &amp; bùng nổ</div>
+          <p>Năm của những chuyến đi, những trận bóng, đêm văn nghệ và tình bạn đủ thân để cãi nhau rồi lại làm hòa.</p>
+        </div>
+        <div class="tl-card reveal" style="--ac:var(--c12)" data-go="l12">
+          <div class="yr">Lớp 12</div>
+          <div class="slogan">Cố gắng &amp; chia xa</div>
+          <p>Vừa miệt mài ôn thi, vừa lưu luyến từng buổi học cuối. Năm khó nhất nhưng cũng đáng nhớ nhất.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- bức tường ảnh chung -->
+    <section>
+      <span class="eyebrow reveal">album tổng hợp</span>
+      <h2 class="sec-title reveal">Bức tường kỷ niệm</h2>
+      <p class="sec-sub reveal">Những khoảnh khắc đẹp nhất của cả ba năm gom về một chỗ.</p>
+      <div class="mosaic" id="wall-chung"></div>
+    </section>
+
+    <!-- video -->
+    <section>
+      <span class="eyebrow reveal">thước phim</span>
+      <h2 class="sec-title reveal">Video của lớp</h2>
+      <p class="sec-sub reveal">Clip văn nghệ, hậu trường và những lời chúc cuối cấp.</p>
+      <div class="videos reveal" id="vids-chung"></div>
+    </section>
+
+    <!-- lưu bút -->
+    <section>
+      <span class="eyebrow reveal">góc lưu bút</span>
+      <h2 class="sec-title reveal">Lời nhắn gửi nhau</h2>
+      <p class="sec-sub reveal">Mỗi mảnh giấy là một câu nói, một slogan, một lời hứa của các thành viên trong lớp.</p>
+      <div class="notes reveal" id="notes-chung"></div>
+    </section>
+
+    <!-- thầy cô -->
+    <section>
+      <span class="eyebrow reveal">người lái đò</span>
+      <h2 class="sec-title reveal">Thầy cô của chúng em</h2>
+      <p class="sec-sub reveal">Những người đã dìu dắt cả lớp suốt chặng đường cấp ba.</p>
+      <div class="teachers reveal" id="teachers-chung"></div>
+    </section>
+  </div>
+
+  <!-- ============ LỚP 10 ============ -->
+  <div class="page" id="l10">
+    <section class="grade-hero">
+      <span class="badge" style="background:var(--c10)">Năm học đầu tiên</span>
+      <h2 style="color:var(--c10)">Lớp 10</h2>
+      <p class="motto">Bỡ ngỡ nhưng rực rỡ — nơi mọi câu chuyện bắt đầu</p>
+    </section>
+    <section>
+      <span class="eyebrow reveal">khoảnh khắc</span>
+      <h2 class="sec-title reveal">Album lớp 10</h2>
+      <div class="mosaic" id="wall-l10"></div>
+    </section>
+    <section>
+      <span class="eyebrow reveal">thước phim</span>
+      <h2 class="sec-title reveal">Video lớp 10</h2>
+      <div class="videos reveal" id="vids-l10"></div>
+    </section>
+    <section>
+      <span class="eyebrow reveal">lưu bút</span>
+      <h2 class="sec-title reveal">Câu nói &amp; slogan lớp 10</h2>
+      <div class="notes reveal" id="notes-l10"></div>
+    </section>
+  </div>
+
+  <!-- ============ LỚP 11 ============ -->
+  <div class="page" id="l11">
+    <section class="grade-hero">
+      <span class="badge" style="background:var(--c11)">Năm học thứ hai</span>
+      <h2 style="color:var(--c11)">Lớp 11</h2>
+      <p class="motto">Gắn bó &amp; bùng nổ — năm của những kỷ niệm khó quên</p>
+    </section>
+    <section>
+      <span class="eyebrow reveal">khoảnh khắc</span>
+      <h2 class="sec-title reveal">Album lớp 11</h2>
+      <div class="mosaic" id="wall-l11"></div>
+    </section>
+    <section>
+      <span class="eyebrow reveal">thước phim</span>
+      <h2 class="sec-title reveal">Video lớp 11</h2>
+      <div class="videos reveal" id="vids-l11"></div>
+    </section>
+    <section>
+      <span class="eyebrow reveal">lưu bút</span>
+      <h2 class="sec-title reveal">Câu nói &amp; slogan lớp 11</h2>
+      <div class="notes reveal" id="notes-l11"></div>
+    </section>
+  </div>
+
+  <!-- ============ LỚP 12 ============ -->
+  <div class="page" id="l12">
+    <section class="grade-hero">
+      <span class="badge" style="background:var(--c12)">Năm học cuối cùng</span>
+      <h2 style="color:var(--c12)">Lớp 12</h2>
+      <p class="motto">Cố gắng &amp; chia xa — chạm tay vào ước mơ</p>
+    </section>
+    <section>
+      <span class="eyebrow reveal">khoảnh khắc</span>
+      <h2 class="sec-title reveal">Album lớp 12</h2>
+      <div class="mosaic" id="wall-l12"></div>
+    </section>
+    <section>
+      <span class="eyebrow reveal">thước phim</span>
+      <h2 class="sec-title reveal">Video lớp 12</h2>
+      <div class="videos reveal" id="vids-l12"></div>
+    </section>
+    <section>
+      <span class="eyebrow reveal">lưu bút</span>
+      <h2 class="sec-title reveal">Câu nói &amp; slogan lớp 12</h2>
+      <div class="notes reveal" id="notes-l12"></div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <div class="big">Cảm ơn vì đã là một phần thanh xuân của nhau.</div>
+  <p>Kỷ yếu lớp … • Niên khóa 20… – 20… • Thực hiện bởi cả tập thể lớp</p>
+</footer>
+
+<button class="fab top" id="toTop" aria-label="Lên đầu trang">↑</button>
+<div class="player" id="player" aria-label="Trình phát nhạc nền">
+  <span class="disc" id="disc"></span>
+  <div class="info">
+    <div class="t" id="trkTitle">Nhạc nền</div>
+    <div class="a" id="trkArtist">bấm ▶ để phát</div>
+  </div>
+  <div class="ctrl">
+    <button id="prevBtn" aria-label="Bài trước" title="Bài trước">⏮</button>
+    <button id="ppBtn" class="pp" aria-label="Phát / dừng" title="Phát / dừng">▶</button>
+    <button id="nextBtn" aria-label="Bài sau" title="Bài sau">⏭</button>
+  </div>
+</div>
+<audio id="bgm" preload="none"></audio>
+<div class="music-hint" id="musicHint">Bấm ▶ để bật nhạc nền nhé</div>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="close" id="lbClose" aria-label="Đóng">✕</button>
+  <div class="box">
+    <div class="photo" id="lbPhoto">📸</div>
+    <div class="cap" id="lbCap"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
