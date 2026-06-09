@@ -1,0 +1,55 @@
+HƯỚNG DẪN — KỶ YẾU "MỘT THỜI ĐỂ NHỚ"
+======================================
+
+CẤU TRÚC (để 3 file CHUNG MỘT THƯ MỤC):
+  index.html   -> khung trang (nội dung chữ, tiêu đề các mục)
+  style.css    -> toàn bộ giao diện: màu sắc, font, bố cục
+  script.js    -> dữ liệu (ảnh, video, lưu bút, thầy cô) + nhạc + hiệu ứng
+
+  Khi gửi/đăng web, phải gửi/đăng CẢ 3 FILE cùng nhau.
+  Mở thử: chạy trên hosting hoặc dùng "Live Server"; nếu nhấp đúp file
+  mà nhạc/ảnh ngoài không chạy thì do trình duyệt chặn giao thức file://.
+
+  TRANG MỘT MẠCH (one-page): lớp 10/11/12 nằm chung trong index, bấm
+  tab trên thanh điều hướng sẽ CUỘN tới đúng khối lớp đó. Mỗi lớp có
+  kiểu bố trí ảnh riêng:
+    - Lớp 10: masonry so le (như bảng ghim)
+    - Lớp 11: cuộn film ngang (kéo qua lại)
+    - Lớp 12: collage xếp lệch, xoay nghiêng
+
+
+1) SỬA ẢNH  ->  mở script.js, tìm khối:  const DATA = { photos: { ... } }
+   Mỗi ảnh là một dòng, ví dụ:
+     {icon:"🎓", cap:"Lễ trưởng thành", size:"big", g1:"#d98b5c", g2:"#9e2f22"}
+   - cap : chú thích ảnh
+   - size: "" | "wide" | "tall" | "big"  (đổi để ô to/nhỏ khác nhau)
+   - g1/g2: 2 màu nền khi CHƯA có ảnh thật
+   - Muốn dùng ẢNH THẬT: thêm  img:"đường-dẫn-ảnh.jpg"  vào dòng đó, ví dụ:
+     {icon:"🎓", cap:"Lễ trưởng thành", size:"big", img:"anh/le-truong-thanh.jpg"}
+   (Để ảnh trong thư mục con như "anh/" cho gọn.)
+
+
+2) SỬA NHẠC  ->  mở script.js, tìm:  const PLAYLIST = [ ... ]
+     {title:"Tên bài", artist:"Ca sĩ / nguồn", src:"nhac/bai1.mp3"}
+   - src: file nhạc đặt cạnh web (vd "nhac/bai1.mp3") hoặc link trực tiếp .mp3
+   - 3 bài demo sẵn có là nhạc miễn phí để nghe thử -> thay bằng bài của bạn.
+
+   LƯU Ý BẢN QUYỀN: web phi lợi nhuận vẫn KHÔNG được dùng nhạc thương mại
+   tuỳ tiện. Dùng nhạc miễn phí/Creative Commons: Pixabay Music, Free Music
+   Archive, YouTube Audio Library, Incompetech, Bensound — hoặc nhạc tự thu.
+
+
+3) SỬA MÀU / FONT  ->  mở style.css, tìm khối:  :root{ ... }  ở trên cùng.
+   Đổi các mã màu (vd --phuong, --amber, --pine) là cả web đổi theo.
+   Ba màu khối lớp: --c10 (lớp 10), --c11 (lớp 11), --c12 (lớp 12).
+
+
+4) SỬA CHỮ TRÊN TRANG (tiêu đề, niên khóa, tên lớp...)
+   ->  mở index.html, sửa trực tiếp phần chữ giữa các thẻ.
+   Ví dụ "Niên khóa 20… – 20…" và dòng cuối trang ở gần thẻ <footer>.
+
+
+5) VIDEO / LƯU BÚT / THẦY CÔ  ->  cũng nằm trong DATA của script.js
+   - videos: đổi 'url' thành link YouTube/Drive của bạn.
+   - notes : câu nói/slogan (q = câu nói, by = người nói).
+   - teachers: tên thầy cô, môn, câu nói.
